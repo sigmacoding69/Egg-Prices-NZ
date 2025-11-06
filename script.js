@@ -1,1067 +1,325 @@
-// Sample grocery data with prices from New Zealand stores
+// Real egg price data from PAK'nSAVE New Zealand - Complete dataset
 const groceryData = [
-    {
-        id: 1,
-        name: "Bananas (1 kg)",
-        category: "fruits",
-        prices: [
-            { store: "Countdown", price: 3.50, distance: 2.1 },
-            { store: "New World", price: 3.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 2.99, distance: 3.2 },
-            { store: "FreshChoice", price: 3.79, distance: 2.5 }
-        ]
-    },
-    {
-        id: 2,
-        name: "Mince Beef (500g)",
-        category: "meat",
-        prices: [
-            { store: "Countdown", price: 8.50, distance: 2.1 },
-            { store: "New World", price: 9.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 7.50, distance: 3.2 },
-            { store: "The Mad Butcher", price: 8.99, distance: 1.2 }
-        ]
-    },
-    {
-        id: 3,
-        name: "Anchor Milk (2L)",
-        category: "dairy",
-        prices: [
-            { store: "Countdown", price: 4.20, distance: 2.1 },
-            { store: "New World", price: 4.50, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 3.80, distance: 3.2 },
-            { store: "Four Square", price: 4.70, distance: 2.5 }
-        ]
-    },
-    {
-        id: 4,
-        name: "Baby Spinach (120g)",
-        category: "vegetables",
-        prices: [
-            { store: "Countdown", price: 3.50, distance: 2.1 },
-            { store: "New World", price: 3.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 2.99, distance: 3.2 },
-            { store: "FreshChoice", price: 3.79, distance: 2.8 }
-        ]
-    },
-    {
-        id: 5,
-        name: "Vogel's Wholemeal Bread",
-        category: "pantry",
-        prices: [
-            { store: "Countdown", price: 4.50, distance: 2.1 },
-            { store: "New World", price: 4.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 3.99, distance: 3.2 },
-            { store: "Four Square", price: 5.20, distance: 3.8 }
-        ]
-    },
-    {
-        id: 6,
-        name: "Chicken Breast (500g)",
-        category: "meat",
-        prices: [
-            { store: "Countdown", price: 11.50, distance: 2.1 },
-            { store: "New World", price: 12.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 9.99, distance: 3.2 },
-            { store: "The Mad Butcher", price: 10.50, distance: 1.2 }
-        ]
-    },
-    {
-        id: 7,
-        name: "McCain Frozen Broccoli (500g)",
-        category: "frozen",
-        prices: [
-            { store: "Countdown", price: 3.50, distance: 2.1 },
-            { store: "New World", price: 3.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 2.99, distance: 3.2 },
-            { store: "FreshChoice", price: 3.79, distance: 2.5 }
-        ]
-    },
-    {
-        id: 8,
-        name: "Olivado Extra Virgin Olive Oil (500ml)",
-        category: "pantry",
-        prices: [
-            { store: "Countdown", price: 16.50, distance: 2.1 },
-            { store: "New World", price: 18.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 14.99, distance: 3.2 },
-            { store: "Farro Fresh", price: 19.99, distance: 4.2 }
-        ]
-    },
-    {
-        id: 9,
-        name: "Anchor Greek Yogurt (1kg)",
-        category: "dairy",
-        prices: [
-            { store: "Countdown", price: 7.50, distance: 2.1 },
-            { store: "New World", price: 8.50, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 6.99, distance: 3.2 },
-            { store: "Four Square", price: 8.99, distance: 3.8 }
-        ]
-    },
-    {
-        id: 10,
-        name: "Royal Gala Apples (1.5kg bag)",
-        category: "fruits",
-        prices: [
-            { store: "Countdown", price: 4.99, distance: 2.1 },
-            { store: "New World", price: 5.50, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 3.99, distance: 3.2 },
-            { store: "Central Otago Orchard", price: 6.99, distance: 6.2 }
-        ]
-    },
-    {
-        id: 11,
-        name: "Kumara (1kg)",
-        category: "vegetables",
-        prices: [
-            { store: "Countdown", price: 3.99, distance: 2.1 },
-            { store: "New World", price: 4.50, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 2.99, distance: 3.2 },
-            { store: "FreshChoice", price: 4.20, distance: 2.5 }
-        ]
-    },
-    {
-        id: 12,
-        name: "Mainland Cheese Block (500g)",
-        category: "dairy",
-        prices: [
-            { store: "Countdown", price: 9.50, distance: 2.1 },
-            { store: "New World", price: 10.99, distance: 1.8 },
-            { store: "PAK'nSAVE", price: 8.50, distance: 3.2 },
-            { store: "Four Square", price: 11.20, distance: 2.5 }
-        ]
-    }
+    { id: 1, name: "Rise N Shine Fresh Colony Mixed Grade Eggs (18pk)", category: "cage-free", brand: "Rise N Shine", packSize: "18pk", pricePerEgg: 0.69, prices: [{ store: "PAK'nSAVE", price: 12.49, distance: 3.2 }] },
+    { id: 2, name: "Farmer Brown Fresh Colony Size 6 Eggs (12pk)", category: "cage-free", brand: "Farmer Brown", packSize: "12pk", pricePerEgg: 0.69, prices: [{ store: "PAK'nSAVE", price: 8.29, distance: 3.2 }] },
+    { id: 3, name: "Farmer Brown Fresh Colony Size 7 Eggs (12pk)", category: "cage-free", brand: "Farmer Brown", packSize: "12pk", pricePerEgg: 0.73, prices: [{ store: "PAK'nSAVE", price: 8.79, distance: 3.2 }] },
+    { id: 4, name: "Henergy Barn Size 6 Eggs (18pk)", category: "barn-laid", brand: "Henergy", packSize: "18pk", pricePerEgg: 0.78, prices: [{ store: "PAK'nSAVE", price: 14.05, distance: 3.2 }] },
+    { id: 5, name: "Farmer Brown Cage-Free Barn Size 6 Eggs (12pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "12pk", pricePerEgg: 0.80, prices: [{ store: "PAK'nSAVE", price: 9.59, distance: 3.2 }] },
+    { id: 6, name: "Little Red Hen Cage Free Mixed Grade Barn Eggs (20pk)", category: "barn-laid", brand: "Little Red Hen", packSize: "20pk", pricePerEgg: 0.80, prices: [{ store: "PAK'nSAVE", price: 15.99, distance: 3.2 }] },
+    { id: 7, name: "Farmer Brown Barn Size 6 Eggs (18pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "18pk", pricePerEgg: 0.81, prices: [{ store: "PAK'nSAVE", price: 14.49, distance: 3.2 }] },
+    { id: 8, name: "Farmer Brown Cage-Free Barn Size 7 Eggs (12pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "12pk", pricePerEgg: 0.84, prices: [{ store: "PAK'nSAVE", price: 10.09, distance: 3.2 }] },
+    { id: 9, name: "Farmer Brown Barn Cage Free Size 7 Eggs (18pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "18pk", pricePerEgg: 0.86, prices: [{ store: "PAK'nSAVE", price: 15.49, distance: 3.2 }] },
+    { id: 10, name: "Zealand Farms Free Range Animal Welfare Foods Mixed Grade Eggs (12pk)", category: "free-range", brand: "Zealand Farms", packSize: "12pk", pricePerEgg: 0.87, prices: [{ store: "PAK'nSAVE", price: 10.49, distance: 3.2 }] },
+    { id: 11, name: "Natural Green Free Range Eggs (20pk)", category: "free-range", brand: "Natural Green", packSize: "20pk", pricePerEgg: 0.88, prices: [{ store: "PAK'nSAVE", price: 17.59, distance: 3.2 }] },
+    { id: 12, name: "Wholesome Barn Cage Free Size 7 Eggs (10pk)", category: "barn-laid", brand: "Wholesome", packSize: "10pk", pricePerEgg: 0.88, prices: [{ store: "PAK'nSAVE", price: 8.79, distance: 3.2 }] },
+    { id: 13, name: "Henergy Cage-Free A Grade Jumbo Eggs (10pk)", category: "cage-free", brand: "Henergy", packSize: "10pk", pricePerEgg: 0.90, prices: [{ store: "PAK'nSAVE", price: 8.99, distance: 3.2 }] },
+    { id: 14, name: "Farmer Brown Fresh Colony Size 8 Eggs (6pk)", category: "cage-free", brand: "Farmer Brown", packSize: "6pk", pricePerEgg: 0.90, prices: [{ store: "PAK'nSAVE", price: 5.39, distance: 3.2 }] },
+    { id: 15, name: "Woodland Free Range Size 6 Eggs (18pk)", category: "free-range", brand: "Woodland", packSize: "18pk", pricePerEgg: 0.92, prices: [{ store: "PAK'nSAVE", price: 16.49, distance: 3.2 }] },
+    { id: 16, name: "Better Eggs Mixed Free Range Eggs (12pk)", category: "free-range", brand: "Better Eggs", packSize: "12pk", pricePerEgg: 0.92, prices: [{ store: "PAK'nSAVE", price: 10.99, distance: 3.2 }] },
+    { id: 17, name: "Woodland Free Range Size 6 Eggs (10pk)", category: "free-range", brand: "Woodland", packSize: "10pk", pricePerEgg: 0.93, prices: [{ store: "PAK'nSAVE", price: 9.29, distance: 3.2 }] },
+    { id: 18, name: "Otaika Valley Premium Free Range Mixed Grade Eggs (10pk)", category: "free-range", brand: "Otaika Valley", packSize: "10pk", pricePerEgg: 0.93, prices: [{ store: "PAK'nSAVE", price: 9.29, distance: 3.2 }] },
+    { id: 19, name: "Otaika Valley Premium Free Range Mixed Grade Eggs (18pk)", category: "free-range", brand: "Otaika Valley", packSize: "18pk", pricePerEgg: 0.94, prices: [{ store: "PAK'nSAVE", price: 16.89, distance: 3.2 }] },
+    { id: 20, name: "Farmer Brown Barn Cage Free Size 8 Eggs (10pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "10pk", pricePerEgg: 0.95, prices: [{ store: "PAK'nSAVE", price: 9.49, distance: 3.2 }] },
+    { id: 21, name: "Woodland Free Range Size 7 Eggs (10pk)", category: "free-range", brand: "Woodland", packSize: "10pk", pricePerEgg: 0.96, prices: [{ store: "PAK'nSAVE", price: 9.59, distance: 3.2 }] },
+    { id: 22, name: "Better Eggs Free Range Size 7 Eggs (12pk)", category: "free-range", brand: "Better Eggs", packSize: "12pk", pricePerEgg: 0.96, prices: [{ store: "PAK'nSAVE", price: 11.49, distance: 3.2 }] },
+    { id: 23, name: "Higgins Family Free Range Size 7 Eggs (12pk)", category: "free-range", brand: "Higgins Family", packSize: "12pk", pricePerEgg: 0.97, prices: [{ store: "PAK'nSAVE", price: 11.69, distance: 3.2 }] },
+    { id: 24, name: "Otaika Valley Premium Free Range Size 7 Eggs (12pk)", category: "free-range", brand: "Otaika Valley", packSize: "12pk", pricePerEgg: 0.98, prices: [{ store: "PAK'nSAVE", price: 11.75, distance: 3.2 }] },
+    { id: 25, name: "Better Eggs Free Range Size 7 Eggs (6pk)", category: "free-range", brand: "Better Eggs", packSize: "6pk", pricePerEgg: 1.00, prices: [{ store: "PAK'nSAVE", price: 6.00, distance: 3.2 }] },
+    { id: 26, name: "Woodland Free Range Grade 8 Eggs (10pk)", category: "free-range", brand: "Woodland", packSize: "10pk", pricePerEgg: 1.10, prices: [{ store: "PAK'nSAVE", price: 10.99, distance: 3.2 }] },
+    { id: 27, name: "Otaika Valley Premium Free Range Size 7 Eggs (6pk)", category: "free-range", brand: "Otaika Valley", packSize: "6pk", pricePerEgg: 1.13, prices: [{ store: "PAK'nSAVE", price: 6.75, distance: 3.2 }] },
+    { id: 28, name: "Wholesome New Zealand Organic Mixed Grade Eggs (10pk)", category: "organic", brand: "Wholesome", packSize: "10pk", pricePerEgg: 1.18, prices: [{ store: "PAK'nSAVE", price: 11.79, distance: 3.2 }] },
+    { id: 29, name: "Better Eggs Free Range Size 8 Eggs (10pk)", category: "free-range", brand: "Better Eggs", packSize: "10pk", pricePerEgg: 1.19, prices: [{ store: "PAK'nSAVE", price: 11.89, distance: 3.2 }] },
+    { id: 30, name: "Otaika Valley Premium Free Range Size 8 Eggs (10pk)", category: "free-range", brand: "Otaika Valley", packSize: "10pk", pricePerEgg: 1.23, prices: [{ store: "PAK'nSAVE", price: 12.29, distance: 3.2 }] },
+    { id: 31, name: "Zeagold Egg White Natural Protein (980ml)", category: "specialty", brand: "Zeagold", packSize: "980ml", pricePerEgg: null, prices: [{ store: "PAK'nSAVE", price: 12.39, distance: 3.2, priceUnit: "$1.26/100ml" }] },
+    // Countdown Products
+    { id: 32, name: "Farmer Brown Eggs Cage Free Barn Size 6 (12pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "12pk", pricePerEgg: 0.74, prices: [{ store: "Countdown", price: 8.90, distance: 2.1, specialOffer: "Save $1.85 (was $10.75)" }] },
+    { id: 33, name: "Henergy Eggs Cage Free Size 6 (18pk)", category: "cage-free", brand: "Henergy", packSize: "18pk", pricePerEgg: 0.79, prices: [{ store: "Countdown", price: 14.30, distance: 2.1, specialOffer: "Save $1.69 (was $15.99)" }] },
+    { id: 34, name: "Woolworths Eggs Barn Mixed Grade (12pk)", category: "barn-laid", brand: "Woolworths", packSize: "12pk", pricePerEgg: 0.79, prices: [{ store: "Countdown", price: 9.50, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 35, name: "Henergy Eggs Cage Free Jumbo (10pk)", category: "cage-free", brand: "Henergy", packSize: "10pk", pricePerEgg: 0.80, prices: [{ store: "Countdown", price: 8.00, distance: 2.1, specialOffer: "20% Off (was $10.20)" }] },
+    { id: 36, name: "Woolworths Eggs Barn Mixed Grade (20pk)", category: "barn-laid", brand: "Woolworths", packSize: "20pk", pricePerEgg: 0.83, prices: [{ store: "Countdown", price: 16.50, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 37, name: "Farmer Brown Eggs Cage Free Barn Size 6 (18pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "18pk", pricePerEgg: 0.88, prices: [{ store: "Countdown", price: 15.80, distance: 2.1 }] },
+    { id: 38, name: "Woolworths Eggs Barn Size 7 (12pk)", category: "barn-laid", brand: "Woolworths", packSize: "12pk", pricePerEgg: 0.88, prices: [{ store: "Countdown", price: 10.50, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 39, name: "Macro Eggs Free Range Mixed Grade (18pk)", category: "free-range", brand: "Macro", packSize: "18pk", pricePerEgg: 0.89, prices: [{ store: "Countdown", price: 16.00, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 40, name: "Otaika Valley Eggs Free Range Mixed Grade (10pk)", category: "free-range", brand: "Otaika Valley", packSize: "10pk", pricePerEgg: 0.89, prices: [{ store: "Countdown", price: 8.90, distance: 2.1, specialOffer: "Save $1.09 (was $9.99)" }] },
+    { id: 41, name: "Henergy Eggs Cage Free Size 6 (12pk)", category: "cage-free", brand: "Henergy", packSize: "12pk", pricePerEgg: 0.90, prices: [{ store: "Countdown", price: 10.79, distance: 2.1 }] },
+    { id: 42, name: "Macro Eggs Free Range Mixed Grade (12pk)", category: "free-range", brand: "Macro", packSize: "12pk", pricePerEgg: 0.90, prices: [{ store: "Countdown", price: 10.80, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 43, name: "Woolworths Eggs Barn Mixed Grade (6pk)", category: "barn-laid", brand: "Woolworths", packSize: "6pk", pricePerEgg: 0.90, prices: [{ store: "Countdown", price: 5.40, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 44, name: "Woolworths Eggs Barn Size 7 (18pk)", category: "barn-laid", brand: "Woolworths", packSize: "18pk", pricePerEgg: 0.90, prices: [{ store: "Countdown", price: 16.20, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 45, name: "Traditional Eggs Free Range Size 6 (20pk)", category: "free-range", brand: "Traditional", packSize: "20pk", pricePerEgg: 0.90, prices: [{ store: "Countdown", price: 17.90, distance: 2.1 }] },
+    { id: 46, name: "Animal Welfare Foods Eggs Free Range Mixed Grade (12pk)", category: "free-range", brand: "Animal Welfare Foods", packSize: "12pk", pricePerEgg: 0.92, prices: [{ store: "Countdown", price: 11.00, distance: 2.1 }] },
+    { id: 47, name: "Better Eggs SPCA Eggs Free Range Mixed Grade (12pk)", category: "free-range", brand: "Better Eggs", packSize: "12pk", pricePerEgg: 0.92, prices: [{ store: "Countdown", price: 10.99, distance: 2.1, specialOffer: "Member Price (Non-member $12.29)" }] },
+    { id: 48, name: "Farmer Brown Eggs Cage Free Barn Size 7 (18pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "18pk", pricePerEgg: 0.93, prices: [{ store: "Countdown", price: 16.70, distance: 2.1 }] },
+    { id: 49, name: "Henergy Eggs Cage Free Size 7 (18pk)", category: "cage-free", brand: "Henergy", packSize: "18pk", pricePerEgg: 0.93, prices: [{ store: "Countdown", price: 16.70, distance: 2.1 }] },
+    { id: 50, name: "Henergy Eggs Cage Free Size 7 (12pk)", category: "cage-free", brand: "Henergy", packSize: "12pk", pricePerEgg: 0.94, prices: [{ store: "Countdown", price: 11.25, distance: 2.1 }] },
+    { id: 51, name: "Farmer Brown Eggs Cage Free Barn Size 7 (12pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "12pk", pricePerEgg: 0.94, prices: [{ store: "Countdown", price: 11.30, distance: 2.1 }] },
+    { id: 52, name: "Woodland Eggs Free Range Size 7 (10pk)", category: "free-range", brand: "Woodland", packSize: "10pk", pricePerEgg: 0.97, prices: [{ store: "Countdown", price: 9.70, distance: 2.1, specialOffer: "Save $1.15 (was $10.85)" }] },
+    { id: 53, name: "Woolworths Eggs Barn Size 7 (6pk)", category: "barn-laid", brand: "Woolworths", packSize: "6pk", pricePerEgg: 0.97, prices: [{ store: "Countdown", price: 5.80, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 54, name: "Otaika Valley Eggs Free Range Mixed Grade (18pk)", category: "free-range", brand: "Otaika Valley", packSize: "18pk", pricePerEgg: 0.97, prices: [{ store: "Countdown", price: 17.40, distance: 2.1 }] },
+    { id: 55, name: "Otaika Valley Eggs Free Range Size 7 (6pk)", category: "free-range", brand: "Otaika Valley", packSize: "6pk", pricePerEgg: 0.98, prices: [{ store: "Countdown", price: 5.90, distance: 2.1, specialOffer: "Save $0.85 (was $6.75)" }] },
+    { id: 56, name: "Woodland Eggs Free Range Size 6 (18pk)", category: "free-range", brand: "Woodland", packSize: "18pk", pricePerEgg: 0.98, prices: [{ store: "Countdown", price: 17.59, distance: 2.1 }] },
+    { id: 57, name: "Woolworths Eggs Barn Size 8 (10pk)", category: "barn-laid", brand: "Woolworths", packSize: "10pk", pricePerEgg: 1.00, prices: [{ store: "Countdown", price: 10.00, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 58, name: "Woolworths Eggs Barn Size 8 (6pk)", category: "barn-laid", brand: "Woolworths", packSize: "6pk", pricePerEgg: 1.00, prices: [{ store: "Countdown", price: 6.00, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 59, name: "Macro Eggs Free Range Size 7 (18pk)", category: "free-range", brand: "Macro", packSize: "18pk", pricePerEgg: 1.00, prices: [{ store: "Countdown", price: 18.00, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 60, name: "Better Eggs SPCA Eggs Free Range Size 7 (12pk)", category: "free-range", brand: "Better Eggs", packSize: "12pk", pricePerEgg: 1.02, prices: [{ store: "Countdown", price: 12.20, distance: 2.1, specialOffer: "Member Price (Non-member $12.90)" }] },
+    { id: 61, name: "Macro Eggs Free Range Size 7 (12pk)", category: "free-range", brand: "Macro", packSize: "12pk", pricePerEgg: 1.02, prices: [{ store: "Countdown", price: 12.20, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 62, name: "Woodland Eggs Free Range Size 6 (10pk)", category: "free-range", brand: "Woodland", packSize: "10pk", pricePerEgg: 1.02, prices: [{ store: "Countdown", price: 10.20, distance: 2.1 }] },
+    { id: 63, name: "Traditional Eggs Free Range Size 7 (12pk)", category: "free-range", brand: "Traditional", packSize: "12pk", pricePerEgg: 1.04, prices: [{ store: "Countdown", price: 12.50, distance: 2.1 }] },
+    { id: 64, name: "Otaika Valley Eggs Free Range Size 7 (18pk)", category: "free-range", brand: "Otaika Valley", packSize: "18pk", pricePerEgg: 1.04, prices: [{ store: "Countdown", price: 18.75, distance: 2.1 }] },
+    { id: 65, name: "Otaika Valley Eggs Free Range Size 7 (12pk)", category: "free-range", brand: "Otaika Valley", packSize: "12pk", pricePerEgg: 1.05, prices: [{ store: "Countdown", price: 12.60, distance: 2.1 }] },
+    { id: 66, name: "Farmer Brown Eggs Cage Free Barn Size 8 (10pk)", category: "barn-laid", brand: "Farmer Brown", packSize: "10pk", pricePerEgg: 1.05, prices: [{ store: "Countdown", price: 10.49, distance: 2.1 }] },
+    { id: 67, name: "Otaika Valley Eggs Free Range Size 8 (10pk)", category: "free-range", brand: "Otaika Valley", packSize: "10pk", pricePerEgg: 1.05, prices: [{ store: "Countdown", price: 10.50, distance: 2.1, specialOffer: "Save $1.49 (was $11.99)" }] },
+    { id: 68, name: "Better Eggs SPCA Eggs Free Range Size 7 (6pk)", category: "free-range", brand: "Better Eggs", packSize: "6pk", pricePerEgg: 1.07, prices: [{ store: "Countdown", price: 6.40, distance: 2.1, specialOffer: "Member Price (Non-member $6.80)" }] },
+    { id: 69, name: "Macro Eggs Free Range Size 7 (6pk)", category: "free-range", brand: "Macro", packSize: "6pk", pricePerEgg: 1.07, prices: [{ store: "Countdown", price: 6.40, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 70, name: "Otaika Valley Eggs Free Range Mixed Grade (6pk)", category: "free-range", brand: "Otaika Valley", packSize: "6pk", pricePerEgg: 1.08, prices: [{ store: "Countdown", price: 6.50, distance: 2.1 }] },
+    { id: 71, name: "Woodland Eggs Free Range Size 7 (6pk)", category: "free-range", brand: "Woodland", packSize: "6pk", pricePerEgg: 1.16, prices: [{ store: "Countdown", price: 6.95, distance: 2.1 }] },
+    { id: 72, name: "Macro Eggs Free Range Size 8 (10pk)", category: "free-range", brand: "Macro", packSize: "10pk", pricePerEgg: 1.19, prices: [{ store: "Countdown", price: 11.90, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 73, name: "Woodland Eggs Free Range Size 8 (10pk)", category: "free-range", brand: "Woodland", packSize: "10pk", pricePerEgg: 1.23, prices: [{ store: "Countdown", price: 12.25, distance: 2.1 }] },
+    { id: 74, name: "Better Eggs SPCA Eggs Free Range Size 8 (10pk)", category: "free-range", brand: "Better Eggs", packSize: "10pk", pricePerEgg: 1.25, prices: [{ store: "Countdown", price: 12.45, distance: 2.1 }] },
+    { id: 75, name: "Wholesome New Zealand Eggs Organic Free Range (10pk)", category: "organic", brand: "Wholesome", packSize: "10pk", pricePerEgg: 1.25, prices: [{ store: "Countdown", price: 12.45, distance: 2.1 }] },
+    { id: 76, name: "Macro Eggs Free Range Size 8 (6pk)", category: "free-range", brand: "Macro", packSize: "6pk", pricePerEgg: 1.25, prices: [{ store: "Countdown", price: 7.50, distance: 2.1, specialOffer: "LOW PRICE" }] },
+    { id: 77, name: "Woodland Eggs Free Range Size 8 (6pk)", category: "free-range", brand: "Woodland", packSize: "6pk", pricePerEgg: 1.33, prices: [{ store: "Countdown", price: 7.99, distance: 2.1 }] },
+    // New World Products
+    { id: 78, name: "Rise N Shine Size 7 12 Pack Colony Eggs (12pk)", category: "cage-free", brand: "Rise N Shine", packSize: "12pk", pricePerEgg: 0.62, prices: [{ store: "New World", price: 7.49, distance: 1.8 }] },
+    { id: 79, name: "Morning Harvest Colony Size 6 Eggs (12pk)", category: "cage-free", brand: "Morning Harvest", packSize: "12pk", pricePerEgg: 0.72, prices: [{ store: "New World", price: 8.69, distance: 1.8 }] },
+    { id: 80, name: "Morning Harvest Colony Laid Size 7 Eggs (12pk)", category: "cage-free", brand: "Morning Harvest", packSize: "12pk", pricePerEgg: 0.73, prices: [{ store: "New World", price: 8.79, distance: 1.8 }] },
+    { id: 81, name: "New Day Free Range Mixed Grade Eggs (6pk)", category: "free-range", brand: "New Day", packSize: "6pk", pricePerEgg: 0.98, prices: [{ store: "New World", price: 5.89, distance: 1.8 }] },
+    { id: 82, name: "Otaika Valley Premium Free Range Size 7 Eggs (12pk)", category: "free-range", brand: "Otaika Valley", packSize: "12pk", pricePerEgg: 0.98, prices: [{ store: "New World", price: 11.79, distance: 1.8 }] },
+    { id: 83, name: "Sungold Organic Free Range Mixed Grade Eggs (10pk)", category: "organic", brand: "Sungold", packSize: "10pk", pricePerEgg: 1.21, prices: [{ store: "New World", price: 12.09, distance: 1.8 }] },
+    { id: 84, name: "Otaika Valley Premium Free Range Size 8 Eggs (10pk)", category: "free-range", brand: "Otaika Valley", packSize: "10pk", pricePerEgg: 1.25, prices: [{ store: "New World", price: 12.49, distance: 1.8 }] },
+    { id: 85, name: "Otaika Valley Premium Free Range Size 8 Eggs (6pk)", category: "free-range", brand: "Otaika Valley", packSize: "6pk", pricePerEgg: 1.35, prices: [{ store: "New World", price: 8.09, distance: 1.8 }] },
+    { id: 86, name: "Zeagold Egg White Natural Protein (980ml)", category: "specialty", brand: "Zeagold", packSize: "980ml", pricePerEgg: null, prices: [{ store: "New World", price: 13.29, distance: 1.8, priceUnit: "$1.36/100ml" }] }
 ];
 
 // Global variables
-let filteredData = [...groceryData];
 let userLocation = null;
-let conversationContext = {
-    userPreferences: {},
-    previousQueries: [],
-    currentTopic: null,
-    mentionedStores: [],
-    mentionedItems: []
-};
 
-// Initialize the application
+// Initialize filtered data globally
+window.filteredData = [...groceryData];
+
+// Initialize dashboard
 document.addEventListener('DOMContentLoaded', function() {
-    displayGroceries(groceryData);
-    setupNavigation();
-    setupChatInput();
+    if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+        initializeDashboard();
+    }
 });
 
-// Navigation functionality - only handle same-page navigation
-function setupNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        
-        // Only intercept links that start with # (same-page navigation)
-        if (href && href.startsWith('#')) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove active class from all links
-                navLinks.forEach(nl => nl.classList.remove('active'));
-                
-                // Add active class to clicked link
-                this.classList.add('active');
-                
-                // Scroll to section
-                const targetId = href.substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        }
-        // For other links (.html files), let them navigate normally
-    });
+function initializeDashboard() {
+    displayRecentDeals();
+    updateDashboardStats();
 }
 
-// Search functionality
-function searchGroceries() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    
-    if (searchTerm.trim() === '') {
-        filteredData = [...groceryData];
-    } else {
-        filteredData = groceryData.filter(item => 
-            item.name.toLowerCase().includes(searchTerm) ||
-            item.category.toLowerCase().includes(searchTerm)
-        );
-    }
-    
-    displayGroceries(filteredData);
-    
-    // Scroll to comparison section
-    document.getElementById('compare').scrollIntoView({ behavior: 'smooth' });
-}
+function displayRecentDeals() {
+    const alertsGrid = document.getElementById('alertsGrid');
+    if (!alertsGrid) return;
 
-// Filter by category
-function filterByCategory() {
-    const category = document.getElementById('categoryFilter').value;
-    
-    if (category === '') {
-        filteredData = [...groceryData];
-    } else {
-        filteredData = groceryData.filter(item => item.category === category);
-    }
-    
-    displayGroceries(filteredData);
-}
+    // Get best deals (lowest price per egg)
+    const bestDeals = groceryData
+        .filter(item => item.pricePerEgg !== null)
+        .sort((a, b) => a.pricePerEgg - b.pricePerEgg)
+        .slice(0, 4);
 
-// Sort prices
-function sortPrices() {
-    const sortType = document.getElementById('sortFilter').value;
-    
-    switch (sortType) {
-        case 'name':
-            filteredData.sort((a, b) => a.name.localeCompare(b.name));
-            break;
-        case 'price-low':
-            filteredData.sort((a, b) => getLowestPrice(a) - getLowestPrice(b));
-            break;
-        case 'price-high':
-            filteredData.sort((a, b) => getHighestPrice(b) - getHighestPrice(a));
-            break;
-        case 'savings':
-            filteredData.sort((a, b) => getSavings(b) - getSavings(a));
-            break;
-    }
-    
-    displayGroceries(filteredData);
-}
-
-// Helper functions for sorting
-function getLowestPrice(item) {
-    return Math.min(...item.prices.map(p => p.price));
-}
-
-function getHighestPrice(item) {
-    return Math.max(...item.prices.map(p => p.price));
-}
-
-function getSavings(item) {
-    const lowest = getLowestPrice(item);
-    const highest = getHighestPrice(item);
-    return highest - lowest;
-}
-
-// Display groceries in the grid
-function displayGroceries(data) {
-    const grid = document.getElementById('groceryGrid');
-    
-    if (data.length === 0) {
-        grid.innerHTML = '<div class="text-center"><h3>No groceries found matching your criteria.</h3></div>';
-        return;
-    }
-    
-    grid.innerHTML = data.map(item => {
-        const sortedPrices = [...item.prices].sort((a, b) => a.price - b.price);
-        const lowestPrice = sortedPrices[0];
-        const highestPrice = sortedPrices[sortedPrices.length - 1];
-        const savings = highestPrice.price - lowestPrice.price;
-        
+    alertsGrid.innerHTML = bestDeals.map(deal => {
+        const price = deal.prices[0];
         return `
-            <div class="grocery-item">
-                <div class="grocery-header">
-                    <h3 class="grocery-name">${item.name}</h3>
-                    <span class="category-badge">${item.category}</span>
+            <div class="alert-card">
+                <div class="alert-icon">
+                    <i class="fas fa-egg"></i>
                 </div>
-                
-                <div class="price-comparison-list">
-                    ${sortedPrices.map(priceItem => `
-                        <div class="price-item">
-                            <span class="store-name">${priceItem.store}</span>
-                            <span class="price ${priceItem.price === lowestPrice.price ? 'lowest' : priceItem.price === highestPrice.price ? 'highest' : ''}">
-                                $${priceItem.price.toFixed(2)} NZD
-                            </span>
+                <div class="alert-content">
+                    <h3>${deal.name}</h3>
+                    <p class="deal-text">Best value at $${deal.pricePerEgg.toFixed(2)} per egg</p>
+                    <div class="price-info">
+                        <span class="current-price">$${price.price.toFixed(2)} NZD</span>
+                        <span class="store-name">at ${price.store}</span>
                         </div>
-                    `).join('')}
                 </div>
-                
-                ${savings > 0 ? `
-                    <div class="text-center mt-1">
-                        <span class="savings">Save $${savings.toFixed(2)} NZD by choosing ${lowestPrice.store}</span>
-                    </div>
-                ` : ''}
+                <button onclick="viewDeal(${deal.id})" class="view-deal-btn">
+                    View Deal
+                </button>
             </div>
         `;
     }).join('');
 }
 
-// Chatbot functionality
-function setupChatInput() {
-    const chatInput = document.getElementById('chatInput');
-    
-    chatInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
-}
-
-function sendMessage() {
-    const input = document.getElementById('chatInput');
-    const message = input.value.trim();
-    
-    if (message === '') return;
-    
-    // Add user message to chat
-    addMessageToChat(message, 'user');
-    
-    // Clear input
-    input.value = '';
-    
-    // Process message
-    processUserMessage(message);
-}
-
-function addMessageToChat(message, sender) {
-    const chatMessages = document.getElementById('chatMessages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${sender}-message`;
-    
-    const icon = sender === 'user' ? 'fas fa-user' : 'fas fa-robot';
-    
-    messageDiv.innerHTML = `
-        <i class="${icon}"></i>
-        <div class="message-content">
-            <p>${message}</p>
-        </div>
-    `;
-    
-    chatMessages.appendChild(messageDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function processUserMessage(message) {
-    // Add to conversation history
-    conversationContext.previousQueries.push(message);
-    
-    // Show typing indicator briefly
-    setTimeout(() => {
-        const intelligentResponse = generateIntelligentResponse(message);
-        addMessageToChat(intelligentResponse, 'bot');
-    }, 800);
-}
-
-function generateIntelligentResponse(message) {
-    const lowerMessage = message.toLowerCase();
-    
-    // Parse the message for intent and entities
-    const intent = parseIntent(lowerMessage);
-    const entities = extractEntities(lowerMessage);
-    
-    // Update conversation context
-    updateConversationContext(intent, entities, message);
-    
-    // Generate contextual response based on intent
-    switch (intent.type) {
-        case 'address_input':
-            return handleAddressInput(message);
-        case 'price_query':
-            return handlePriceQuery(entities);
-        case 'store_query':
-            return handleStoreQuery(entities);
-        case 'product_query':
-            return handleProductQuery(entities);
-        case 'comparison_request':
-            return handleComparisonRequest(entities);
-        case 'budget_request':
-            return handleBudgetRequest(entities);
-        case 'luxury_request':
-            return handleLuxuryRequest(entities);
-        case 'recommendation_request':
-            return handleRecommendationRequest(entities);
-        case 'greeting':
-            return handleGreeting();
-        case 'location_request':
-            return handleLocationRequest();
-        default:
-            return handleContextualQuery(message, entities);
-    }
-}
-
-function parseIntent(message) {
-    // Address/Location intents
-    if (isAddress(message) || /(?:my address is|i live|located at)/i.test(message)) {
-        return { type: 'address_input', confidence: 0.9 };
-    }
-    
-    if (/(?:where|location|address|near me)/i.test(message)) {
-        return { type: 'location_request', confidence: 0.8 };
-    }
-    
-    // Price-related intents
-    if (/(?:price|cost|how much|expensive|cheap)/i.test(message)) {
-        return { type: 'price_query', confidence: 0.8 };
-    }
-    
-    // Store-related intents
-    if (/(?:store|supermarket|shop|countdown|new world|pak.*save|four square)/i.test(message)) {
-        return { type: 'store_query', confidence: 0.8 };
-    }
-    
-    // Product-related intents
-    if (/(?:banana|milk|bread|meat|chicken|beef|cheese|apple)/i.test(message)) {
-        return { type: 'product_query', confidence: 0.8 };
-    }
-    
-    // Comparison intents
-    if (/(?:compare|comparison|versus|vs|difference|better)/i.test(message)) {
-        return { type: 'comparison_request', confidence: 0.8 };
-    }
-    
-    // Budget intents
-    if (/(?:budget|cheap|cheapest|affordable|save money|lowest price)/i.test(message)) {
-        return { type: 'budget_request', confidence: 0.9 };
-    }
-    
-    // Luxury intents
-    if (/(?:luxury|premium|expensive|high.?quality|best quality|gourmet)/i.test(message)) {
-        return { type: 'luxury_request', confidence: 0.9 };
-    }
-    
-    // Recommendation intents
-    if (/(?:recommend|suggest|advice|help|what should|best)/i.test(message)) {
-        return { type: 'recommendation_request', confidence: 0.8 };
-    }
-    
-    // Greeting intents
-    if (/(?:hello|hi|hey|kia ora|good morning|good afternoon)/i.test(message)) {
-        return { type: 'greeting', confidence: 0.9 };
-    }
-    
-    return { type: 'general_query', confidence: 0.5 };
-}
-
-function extractEntities(message) {
-    const entities = {
-        stores: [],
-        products: [],
-        categories: [],
-        priceModifiers: [],
-        locations: []
-    };
-    
-    // Extract store names
-    const storePatterns = {
-        'countdown': /countdown/i,
-        'new world': /new world/i,
-        'pak\'nsave': /pak.*save|paknsave/i,
-        'four square': /four square/i,
-        'the mad butcher': /mad butcher/i,
-        'freshchoice': /fresh.?choice/i,
-        'farro fresh': /farro/i
-    };
-    
-    for (const [store, pattern] of Object.entries(storePatterns)) {
-        if (pattern.test(message)) {
-            entities.stores.push(store);
-        }
-    }
-    
-    // Extract product names
-    const productPatterns = {
-        'bananas': /banana/i,
-        'milk': /milk/i,
-        'bread': /bread/i,
-        'beef': /beef|mince/i,
-        'chicken': /chicken/i,
-        'cheese': /cheese/i,
-        'apples': /apple/i,
-        'spinach': /spinach/i,
-        'kumara': /kumara/i,
-        'yogurt': /yogurt|yoghurt/i,
-        'olive oil': /olive oil/i,
-        'broccoli': /broccoli/i
-    };
-    
-    for (const [product, pattern] of Object.entries(productPatterns)) {
-        if (pattern.test(message)) {
-            entities.products.push(product);
-        }
-    }
-    
-    // Extract categories
-    const categoryPatterns = {
-        'fruits': /fruit/i,
-        'vegetables': /vegetable|veg/i,
-        'dairy': /dairy/i,
-        'meat': /meat/i,
-        'pantry': /pantry|grocery/i,
-        'frozen': /frozen/i
-    };
-    
-    for (const [category, pattern] of Object.entries(categoryPatterns)) {
-        if (pattern.test(message)) {
-            entities.categories.push(category);
-        }
-    }
-    
-    // Extract price modifiers
-    if (/cheap|budget|affordable|lowest/i.test(message)) {
-        entities.priceModifiers.push('budget');
-    }
-    if (/expensive|premium|luxury|highest/i.test(message)) {
-        entities.priceModifiers.push('premium');
-    }
-    
-    return entities;
-}
-
-function updateConversationContext(intent, entities, message) {
-    // Update current topic
-    conversationContext.currentTopic = intent.type;
-    
-    // Update mentioned stores and items
-    conversationContext.mentionedStores = [...new Set([...conversationContext.mentionedStores, ...entities.stores])];
-    conversationContext.mentionedItems = [...new Set([...conversationContext.mentionedItems, ...entities.products])];
-    
-    // Update user preferences based on repeated requests
-    if (entities.priceModifiers.includes('budget')) {
-        conversationContext.userPreferences.pricePreference = 'budget';
-    } else if (entities.priceModifiers.includes('premium')) {
-        conversationContext.userPreferences.pricePreference = 'premium';
-    }
-}
-
-function isAddress(text) {
-    // Simple address detection (contains numbers and street-like words)
-    const addressPattern = /\d+.*(?:street|st|avenue|ave|road|rd|drive|dr|lane|ln|way|blvd|boulevard)/i;
-    return addressPattern.test(text);
-}
-
-// New intelligent handler functions
-function handlePriceQuery(entities) {
-    if (entities.products.length > 0) {
-        return generateProductPriceResponse(entities.products);
-    } else if (entities.stores.length > 0) {
-        return generateStorePriceResponse(entities.stores);
-    } else {
-        return "I can help you find prices for specific products! Try asking something like 'How much is milk?' or 'What's the price of bananas at Countdown?'";
-    }
-}
-
-function handleStoreQuery(entities) {
-    const stores = entities.stores;
-    if (stores.length > 0) {
-        return generateStoreInfoResponse(stores);
-    } else {
-        return "I can tell you about New Zealand supermarkets like Countdown, New World, PAK'nSAVE, Four Square, The Mad Butcher, FreshChoice, and Farro Fresh. Which store would you like to know about?";
-    }
-}
-
-function handleProductQuery(entities) {
-    const products = entities.products;
-    if (products.length > 0) {
-        return generateProductInfoResponse(products);
-    } else {
-        return "I can help you find information about groceries! Try asking about specific items like bananas, milk, bread, chicken, or any other grocery items.";
-    }
-}
-
-function handleComparisonRequest(entities) {
-    if (entities.products.length > 0) {
-        return generateProductComparisonResponse(entities.products);
-    } else if (entities.stores.length > 1) {
-        return generateStoreComparisonResponse(entities.stores);
-    } else {
-        return "I can compare prices for you! Try asking something like 'Compare milk prices' or 'Which store has cheaper bananas?'";
-    }
-}
-
-function handleBudgetRequest(entities) {
-    if (entities.products.length > 0) {
-        return generateBudgetProductResponse(entities.products);
-    } else if (entities.categories.length > 0) {
-        return generateBudgetCategoryResponse(entities.categories);
-    } else {
-        return generateGeneralBudgetResponse();
-    }
-}
-
-function handleLuxuryRequest(entities) {
-    if (entities.products.length > 0) {
-        return generateLuxuryProductResponse(entities.products);
-    } else {
-        return generateGeneralLuxuryResponse();
-    }
-}
-
-function handleRecommendationRequest(entities) {
-    if (userLocation) {
-        if (entities.priceModifiers.includes('budget')) {
-            return generateBudgetRecommendationsWithLocation();
-        } else if (entities.priceModifiers.includes('premium')) {
-            return generateLuxuryRecommendationsWithLocation();
-        } else {
-            return generateGeneralRecommendationsWithLocation();
-        }
-    } else {
-        return "I'd love to give you personalized recommendations! First, could you share your address or allow location access so I can find the best stores near you?";
-    }
-}
-
-function handleGreeting() {
-    const greetings = [
-        "Kia ora! Great to see you here. I'm ready to help you find the best grocery deals in New Zealand. What can I help you with today?",
-        "Hello! I'm your NZ grocery assistant. I can help you compare prices, find budget deals, or locate premium products. What would you like to know?",
-        "Hi there! Looking for grocery deals? I can help you find the best prices across New Zealand supermarkets. What are you shopping for?"
-    ];
-    return greetings[Math.floor(Math.random() * greetings.length)];
-}
-
-function handleLocationRequest() {
-    if (userLocation) {
-        return `You're currently set to: ${userLocation}. I can provide recommendations for supermarkets near you. Would you like to see budget options or premium stores?`;
-    } else {
-        return "I don't have your location yet. You can either tell me your address (like '123 Queen Street, Auckland') or click the location button to use GPS. This helps me find the closest supermarkets with the best deals!";
-    }
-}
-
-function handleContextualQuery(message, entities) {
-    // Use conversation context to provide better responses
-    if (conversationContext.userPreferences.pricePreference === 'budget') {
-        return "Based on our conversation, you seem to prefer budget options. " + generateGeneralBudgetResponse();
-    } else if (conversationContext.userPreferences.pricePreference === 'premium') {
-        return "Since you're interested in premium products, " + generateGeneralLuxuryResponse();
-    } else {
-        return generateContextualResponse(message);
-    }
-}
-
-function generateContextualResponse(message) {
-    const responses = [
-        "I understand you're looking for grocery information. Could you be more specific? For example, you could ask about prices, stores, or specific products.",
-        "I'm here to help with New Zealand grocery shopping! Try asking about specific items like 'How much is bread?' or 'Where can I find cheap vegetables?'",
-        "Let me help you with that! I can assist with price comparisons, store recommendations, or finding budget/premium options. What specific information do you need?"
-    ];
-    return responses[Math.floor(Math.random() * responses.length)];
-}
-
-function handleAddressInput(address) {
-    userLocation = address;
-    const response = `Perfect! I've saved your address: "${address}". Now I can provide you with personalized recommendations for grocery stores near you. Based on your location, here are some options nearby:`;
-    
-    // Return the response and trigger location-based recommendations
-    setTimeout(() => {
-        addMessageToChat(generateLocationRecommendations(), 'bot');
-    }, 1000);
-    
-    return response;
-}
-
-function provideLocationBasedRecommendations() {
-    const recommendations = generateLocationRecommendations();
-    addMessageToChat(recommendations, 'bot');
-}
-
-function generateLocationRecommendations() {
-    return `
-        <p>Based on your location, here are the closest NZ supermarkets with great deals:</p>
+function updateDashboardStats() {
+    // Update total savings
+    const totalSavingsElement = document.getElementById('totalSavings');
+    if (totalSavingsElement) {
+        const avgPricePerEgg = groceryData
+            .filter(item => item.pricePerEgg !== null)
+            .reduce((sum, item) => sum + item.pricePerEgg, 0) / 
+            groceryData.filter(item => item.pricePerEgg !== null).length;
         
-        <div class="recommendation-card">
-            <div class="recommendation-header">
-                <strong>New World</strong>
-                <span class="store-distance">1.8 km away</span>
-            </div>
-            <p><strong>Best deals:</strong> Baby Spinach ($3.99 NZD), Anchor Milk ($4.50 NZD)</p>
-            <p><strong>Specialty:</strong> Fresh produce and premium brands</p>
-        </div>
+        const cheapestPrice = Math.min(...groceryData
+            .filter(item => item.pricePerEgg !== null)
+            .map(item => item.pricePerEgg));
         
-        <div class="recommendation-card">
-            <div class="recommendation-header">
-                <strong>Countdown</strong>
-                <span class="store-distance">2.1 km away</span>
-            </div>
-            <p><strong>Best deals:</strong> Vogel's Bread ($4.50 NZD), Mince Beef ($8.50 NZD), Greek Yogurt ($7.50 NZD)</p>
-            <p><strong>Specialty:</strong> Great everyday prices and wide selection</p>
-        </div>
-        
-        <div class="recommendation-card">
-            <div class="recommendation-header">
-                <strong>PAK'nSAVE</strong>
-                <span class="store-distance">3.2 km away</span>
-            </div>
-            <p><strong>Best deals:</strong> Anchor Milk ($3.80 NZD), Vogel's Bread ($3.99 NZD), Greek Yogurt ($6.99 NZD)</p>
-            <p><strong>Specialty:</strong> New Zealand's lowest food prices</p>
-        </div>
-        
-        <div class="recommendation-card">
-            <div class="recommendation-header">
-                <strong>The Mad Butcher</strong>
-                <span class="store-distance">1.2 km away</span>
-            </div>
-            <p><strong>Best deals:</strong> Mince Beef ($8.99 NZD), Chicken Breast ($10.50 NZD)</p>
-            <p><strong>Specialty:</strong> Quality meat at great prices</p>
-        </div>
-    `;
-}
+        const potentialSavings = (avgPricePerEgg - cheapestPrice) * 12 * 52; // Per year
+        totalSavingsElement.textContent = `$${potentialSavings.toFixed(2)}`;
+    }
 
-// Dynamic response generation functions
-function generateProductPriceResponse(products) {
-    let response = "<p>Here are the current prices for the items you asked about:</p>";
-    
-    products.forEach(productName => {
-        const items = groceryData.filter(item => 
-            item.name.toLowerCase().includes(productName) || 
-            productName.includes(item.name.toLowerCase().split(' ')[0])
-        );
-        
-        if (items.length > 0) {
-            const item = items[0];
-            const sortedPrices = [...item.prices].sort((a, b) => a.price - b.price);
-            
-            response += `
-                <div class="recommendation-card">
-                    <div class="recommendation-header">
-                        <strong>${item.name}</strong>
-                    </div>
-                    <p><strong>Cheapest:</strong> $${sortedPrices[0].price.toFixed(2)} NZD at ${sortedPrices[0].store}</p>
-                    <p><strong>Most expensive:</strong> $${sortedPrices[sortedPrices.length-1].price.toFixed(2)} NZD at ${sortedPrices[sortedPrices.length-1].store}</p>
-                    <p><em>Save $${(sortedPrices[sortedPrices.length-1].price - sortedPrices[0].price).toFixed(2)} NZD by choosing ${sortedPrices[0].store}!</em></p>
-                </div>
-            `;
-        }
-    });
-    
-    return response;
-}
-
-function generateStoreInfoResponse(stores) {
-    let response = "<p>Here's what I know about the store(s) you mentioned:</p>";
-    
-    stores.forEach(storeName => {
-        const storeItems = [];
+    // Update store count
+    const storeCountElement = document.getElementById('storeCount');
+    if (storeCountElement) {
+        const uniqueStores = new Set();
         groceryData.forEach(item => {
-            const storePrice = item.prices.find(p => p.store.toLowerCase().includes(storeName.toLowerCase()));
-            if (storePrice) {
-                storeItems.push({ ...item, price: storePrice.price, distance: storePrice.distance });
-            }
+            item.prices.forEach(price => uniqueStores.add(price.store));
         });
-        
-        if (storeItems.length > 0) {
-            const avgPrice = storeItems.reduce((sum, item) => sum + item.price, 0) / storeItems.length;
-            const cheapestItem = storeItems.sort((a, b) => a.price - b.price)[0];
-            
-            response += `
-                <div class="recommendation-card">
-                    <div class="recommendation-header">
-                        <strong>${storeName.charAt(0).toUpperCase() + storeName.slice(1)}</strong>
-                        <span class="store-distance">${storeItems[0].distance} km away</span>
-                    </div>
-                    <p><strong>Average price level:</strong> $${avgPrice.toFixed(2)} NZD</p>
-                    <p><strong>Best deal:</strong> ${cheapestItem.name} for $${cheapestItem.price.toFixed(2)} NZD</p>
-                    <p><strong>Total items available:</strong> ${storeItems.length} products in our database</p>
-                </div>
-            `;
-        }
-    });
-    
-    return response;
+        storeCountElement.textContent = uniqueStores.size;
+    }
+
+    // Update last update time
+    const lastUpdateElement = document.getElementById('lastUpdate');
+    if (lastUpdateElement) {
+        lastUpdateElement.textContent = new Date().toLocaleTimeString();
+    }
 }
 
-function generateProductInfoResponse(products) {
-    let response = "<p>Here's detailed information about the products you're interested in:</p>";
-    
-    products.forEach(productName => {
-        const items = groceryData.filter(item => 
-            item.name.toLowerCase().includes(productName) || 
-            productName.includes(item.name.toLowerCase().split(' ')[0])
-        );
-        
-        if (items.length > 0) {
-            const item = items[0];
-            const avgPrice = item.prices.reduce((sum, p) => sum + p.price, 0) / item.prices.length;
-            const priceRange = Math.max(...item.prices.map(p => p.price)) - Math.min(...item.prices.map(p => p.price));
-            
-            response += `
-                <div class="recommendation-card">
-                    <div class="recommendation-header">
-                        <strong>${item.name}</strong>
-                        <span class="category-badge">${item.category}</span>
-                    </div>
-                    <p><strong>Average price:</strong> $${avgPrice.toFixed(2)} NZD</p>
-                    <p><strong>Price range:</strong> $${priceRange.toFixed(2)} NZD difference between stores</p>
-                    <p><strong>Available at:</strong> ${item.prices.length} different stores</p>
-                </div>
-            `;
-        }
-    });
-    
-    return response;
+function viewDeal(dealId) {
+    window.location.href = `prices.html?highlight=${dealId}`;
 }
 
-function generateProductComparisonResponse(products) {
-    if (products.length === 1) {
-        return generateProductPriceResponse(products);
+function openPriceAlerts() {
+    // Check if user is logged in
+    if (!window.authSystem || !window.authSystem.isLoggedIn()) {
+        showAuthModal('signup');
+        return;
     }
     
-    let response = "<p>Here's a comparison of the products you mentioned:</p>";
+    // Check if user is premium
+    if (!window.authSystem.isPremium()) {
+        showPremiumModal();
+        return;
+    }
     
-    products.forEach(productName => {
-        const items = groceryData.filter(item => 
-            item.name.toLowerCase().includes(productName)
-        );
-        
-        if (items.length > 0) {
-            const item = items[0];
-            const cheapestPrice = Math.min(...item.prices.map(p => p.price));
-            const cheapestStore = item.prices.find(p => p.price === cheapestPrice).store;
-            
-            response += `
-                <div class="recommendation-card">
-                    <div class="recommendation-header">
-                        <strong>${item.name}</strong>
-                    </div>
-                    <p><strong>Best deal:</strong> $${cheapestPrice.toFixed(2)} NZD at ${cheapestStore}</p>
-                </div>
-            `;
-        }
-    });
-    
-    return response;
+    // For demo purposes, show a simple price alerts interface
+    const alertModal = document.createElement('div');
+    alertModal.className = 'modal';
+    alertModal.innerHTML = `
+        <div class="modal-content">
+            <span class="close" onclick="this.parentElement.parentElement.remove()">&times;</span>
+            <h2>Price Alerts</h2>
+            <p>Set up alerts for your favorite egg products:</p>
+            <div class="alert-form">
+                <select id="alertProduct">
+                    <option value="">Select a product...</option>
+                    ${groceryData.slice(0, 10).map(item => 
+                        `<option value="${item.id}">${item.name}</option>`
+                    ).join('')}
+                </select>
+                <input type="number" id="alertPrice" placeholder="Alert when price drops below..." step="0.01">
+                <button onclick="setPriceAlert()">Set Alert</button>
+            </div>
+            <div id="activeAlerts">
+                <h3>Active Alerts</h3>
+                <p>No active alerts set.</p>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(alertModal);
 }
 
-function generateBudgetProductResponse(products) {
-    let response = "<p>Here are the most budget-friendly options for the items you mentioned:</p>";
+function openShoppingList() {
+    // Check if user is logged in
+    if (!window.authSystem || !window.authSystem.isLoggedIn()) {
+        showAuthModal('signup');
+        return;
+    }
     
-    products.forEach(productName => {
-        const items = groceryData.filter(item => 
-            item.name.toLowerCase().includes(productName) || 
-            productName.includes(item.name.toLowerCase().split(' ')[0])
-        );
-        
-        if (items.length > 0) {
-            const item = items[0];
-            const cheapestPrice = Math.min(...item.prices.map(p => p.price));
-            const cheapestStore = item.prices.find(p => p.price === cheapestPrice).store;
-            
-            response += `
-                <div class="recommendation-card">
-                    <div class="recommendation-header">
-                        <strong>${item.name}</strong>
-                        <span class="price lowest">$${cheapestPrice.toFixed(2)} NZD</span>
-                    </div>
-                    <p>Cheapest at <strong>${cheapestStore}</strong></p>
-                </div>
-            `;
-        }
-    });
-    
-    return response;
+    // For demo purposes, show a simple shopping list interface
+    const listModal = document.createElement('div');
+    listModal.className = 'modal';
+    listModal.innerHTML = `
+        <div class="modal-content">
+            <span class="close" onclick="this.parentElement.parentElement.remove()">&times;</span>
+            <h2>Egg Shopping List</h2>
+            <p>Track your egg purchases and compare prices:</p>
+            <div class="shopping-form">
+                <select id="listProduct">
+                    <option value="">Add a product to your list...</option>
+                    ${groceryData.slice(0, 15).map(item => 
+                        `<option value="${item.id}">${item.name} - $${getLowestPrice(item).toFixed(2)}</option>`
+                    ).join('')}
+                </select>
+                <button onclick="addToList()">Add to List</button>
+            </div>
+            <div id="shoppingList">
+                <h3>Your Shopping List</h3>
+                <p>No items in your list yet.</p>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(listModal);
 }
 
-function generateBudgetCategoryResponse(categories) {
-    let response = "<p>Here are the best budget options in the categories you mentioned:</p>";
+function setPriceAlert() {
+    const productId = document.getElementById('alertProduct').value;
+    const alertPrice = document.getElementById('alertPrice').value;
     
-    categories.forEach(category => {
-        const categoryItems = groceryData.filter(item => item.category === category);
-        
-        if (categoryItems.length > 0) {
-            const bestDeals = categoryItems.map(item => {
-                const cheapestPrice = Math.min(...item.prices.map(p => p.price));
-                const cheapestStore = item.prices.find(p => p.price === cheapestPrice).store;
-                return { ...item, cheapestPrice, cheapestStore };
-            }).sort((a, b) => a.cheapestPrice - b.cheapestPrice);
-            
-            response += `<h4>${category.charAt(0).toUpperCase() + category.slice(1)}</h4>`;
-            
-            bestDeals.slice(0, 3).forEach(item => {
-                response += `
-                    <div class="recommendation-card">
-                        <div class="recommendation-header">
-                            <strong>${item.name}</strong>
-                            <span class="price lowest">$${item.cheapestPrice.toFixed(2)} NZD</span>
-                        </div>
-                        <p>Available at <strong>${item.cheapestStore}</strong></p>
-                    </div>
-                `;
-            });
-        }
-    });
+    if (!productId || !alertPrice) {
+        alert('Please select a product and set a price');
+        return;
+    }
     
-    return response;
-}
-
-function generateGeneralBudgetResponse() {
-    const budgetItems = groceryData.map(item => {
-        const lowestPrice = Math.min(...item.prices.map(p => p.price));
-        const bestStore = item.prices.find(p => p.price === lowestPrice);
-        return { ...item, bestPrice: lowestPrice, bestStore: bestStore.store };
-    }).sort((a, b) => a.bestPrice - b.bestPrice);
-    
-    const top5Budget = budgetItems.slice(0, 5);
-    
-    let response = `<p>Here are the best budget-friendly options available:</p>`;
-    
-    top5Budget.forEach(item => {
-        response += `
-            <div class="recommendation-card">
-                <div class="recommendation-header">
-                    <strong>${item.name}</strong>
-                    <span class="price lowest">$${item.bestPrice.toFixed(2)} NZD</span>
-                </div>
-                <p>Available at <strong>${item.bestStore}</strong></p>
+    const product = groceryData.find(item => item.id == productId);
+    if (product) {
+        showToast(`Price alert set for ${product.name} at $${alertPrice}`, 'success');
+        document.getElementById('activeAlerts').innerHTML = `
+            <h3>Active Alerts</h3>
+            <div class="alert-item">
+                <strong>${product.name}</strong><br>
+                Alert when price drops below $${alertPrice}
             </div>
         `;
-    });
-    
-    return response;
+    }
 }
 
-function generateLuxuryProductResponse(products) {
-    let response = "<p>Here are the premium options for the items you mentioned:</p>";
+function addToList() {
+    const productId = document.getElementById('listProduct').value;
     
-    products.forEach(productName => {
-        const items = groceryData.filter(item => 
-            item.name.toLowerCase().includes(productName) || 
-            productName.includes(item.name.toLowerCase().split(' ')[0])
-        );
-        
-        if (items.length > 0) {
-            const item = items[0];
-            const expensivePrice = Math.max(...item.prices.map(p => p.price));
-            const expensiveStore = item.prices.find(p => p.price === expensivePrice).store;
-            
-            response += `
-                <div class="recommendation-card">
-                    <div class="recommendation-header">
-                        <strong>${item.name}</strong>
-                        <span class="price highest">$${expensivePrice.toFixed(2)} NZD</span>
-                    </div>
-                    <p>Premium quality at <strong>${expensiveStore}</strong></p>
-                </div>
-            `;
-        }
-    });
+    if (!productId) {
+        alert('Please select a product');
+        return;
+    }
     
-    return response;
-}
-
-function generateGeneralLuxuryResponse() {
-    const luxuryStores = ['Farro Fresh', 'Central Otago Orchard', 'New World'];
-    
-    const luxuryItems = groceryData.filter(item => 
-        item.prices.some(p => luxuryStores.includes(p.store))
-    ).map(item => {
-        const luxuryOptions = item.prices.filter(p => luxuryStores.includes(p.store));
-        const bestLuxury = luxuryOptions.sort((a, b) => b.price - a.price)[0];
-        return { ...item, luxuryPrice: bestLuxury.price, luxuryStore: bestLuxury.store };
-    });
-    
-    let response = `<p>Here are premium, high-quality options available in New Zealand:</p>`;
-    
-    luxuryItems.slice(0, 5).forEach(item => {
-        response += `
-            <div class="recommendation-card">
-                <div class="recommendation-header">
-                    <strong>${item.name}</strong>
-                    <span class="price highest">$${item.luxuryPrice.toFixed(2)} NZD</span>
-                </div>
-                <p>Premium quality at <strong>${item.luxuryStore}</strong></p>
-                <p><small>Higher price for superior quality and sourcing</small></p>
+    const product = groceryData.find(item => item.id == productId);
+    if (product) {
+        showToast(`Added ${product.name} to your shopping list`, 'success');
+        document.getElementById('shoppingList').innerHTML = `
+            <h3>Your Shopping List</h3>
+            <div class="list-item">
+                <strong>${product.name}</strong><br>
+                Best price: $${getLowestPrice(product).toFixed(2)} at ${product.prices.find(p => p.price === getLowestPrice(product)).store}
             </div>
         `;
-    });
+    }
+}
+
+function getLowestPrice(item) {
+    return Math.min(...item.prices.map(p => p.price));
+}
+
+// Real Stripe payment functionality
+function testStripePayment() {
+    if (!window.authSystem || !window.authSystem.isLoggedIn()) {
+        showAuthModal('signup');
+        return;
+    }
     
-    return response;
-}
-
-// Location-based recommendation functions
-function generateBudgetRecommendationsWithLocation() {
-    return generateGeneralBudgetResponse() + "<p><em>Based on your location, I've prioritized stores that are closest to you.</em></p>";
-}
-
-function generateLuxuryRecommendationsWithLocation() {
-    return generateGeneralLuxuryResponse() + "<p><em>These premium options are available at stores near your location.</em></p>";
-}
-
-function generateGeneralRecommendationsWithLocation() {
-    return generateLocationRecommendations();
-}
-
-// Clean up - these functions are now handled by the intelligent system above
-
-// Geolocation functionality
-function getLocation() {
-    if (navigator.geolocation) {
-        const locationButton = document.getElementById('locationButton');
-        locationButton.innerHTML = '<div class="loading"></div>';
-        
-        navigator.geolocation.getCurrentPosition(
-            function(position) {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-                
-                // In a real app, you would use a reverse geocoding service
-                // For demo purposes, we'll simulate a NZ address
-                const nzCities = ['Auckland', 'Wellington', 'Christchurch', 'Hamilton', 'Tauranga'];
-                const randomCity = nzCities[Math.floor(Math.random() * nzCities.length)];
-                const simulatedAddress = `${Math.floor(Math.random() * 999) + 1} Queen Street, ${randomCity} ${Math.floor(Math.random() * 9000) + 1000}`;
-                
-                userLocation = simulatedAddress;
-                
-                locationButton.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
-                
-                const response = `I've detected your location in New Zealand! Based on your coordinates (${lat.toFixed(4)}, ${lon.toFixed(4)}), I'll provide recommendations for NZ supermarkets near you.`;
-                addMessageToChat(response, 'bot');
-                
-                setTimeout(() => {
-                    provideLocationBasedRecommendations();
-                }, 1500);
-            },
-            function(error) {
-                locationButton.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
-                
-                let errorMessage = "Unable to access your location. ";
-                switch(error.code) {
-                    case error.PERMISSION_DENIED:
-                        errorMessage += "Please allow location access or enter your address manually.";
-                        break;
-                    case error.POSITION_UNAVAILABLE:
-                        errorMessage += "Location information is unavailable.";
-                        break;
-                    case error.TIMEOUT:
-                        errorMessage += "Location request timed out.";
-                        break;
-                    default:
-                        errorMessage += "An unknown error occurred.";
-                        break;
-                }
-                
-                addMessageToChat(errorMessage, 'bot');
-            }
-        );
+    if (window.stripePaymentHandler) {
+        console.log('💳 Starting Stripe payment...');
+        window.stripePaymentHandler.createPremiumSubscription();
     } else {
-        addMessageToChat("Geolocation is not supported by this browser. Please enter your address manually.", 'bot');
+        console.error('❌ Stripe payment handler not available');
+        showToast('Stripe payment handler not available', 'error');
     }
 }
 
-// Utility function to handle enter key in search
-document.getElementById('searchInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        searchGroceries();
-    }
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+// Make functions globally accessible
+window.viewDeal = viewDeal;
+window.openPriceAlerts = openPriceAlerts;
+window.openShoppingList = openShoppingList;
+window.setPriceAlert = setPriceAlert;
+window.addToList = addToList;
+window.getLowestPrice = getLowestPrice;
+window.testStripePayment = testStripePayment;

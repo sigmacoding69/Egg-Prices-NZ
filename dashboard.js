@@ -165,11 +165,8 @@ function populateQuickActions() {
             <h3>Compare Prices</h3>
             <p>Find the best deals across all stores</p>
         </div>
-        <div class="action-card" onclick="window.location.href='ai-assistant.html'">
-            <i class="fas fa-robot"></i>
-            <h3>AI Assistant</h3>
-            <p>Get personalized shopping recommendations</p>
-        </div>
+
+
         <div class="action-card premium" onclick="showPremiumModal()">
             <i class="fas fa-star"></i>
             <h3>Premium Features</h3>

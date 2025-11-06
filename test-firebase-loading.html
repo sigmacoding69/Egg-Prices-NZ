@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Loading Test</title>
+</head>
+<body>
+    <h1>Firebase Loading Test</h1>
+    <div id="status">Testing Firebase loading...</div>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        function updateStatus(message) {
+            document.getElementById('status').innerHTML = message;
+            console.log(message);
+        }
+        
+        // Test Firebase loading
+        console.log('🔄 Testing Firebase loading...');
+        console.log('Firebase available:', typeof firebase !== 'undefined');
+        
+        if (typeof firebase !== 'undefined') {
+            updateStatus('✅ Firebase SDK loaded successfully!');
+            console.log('Firebase version:', firebase.SDK_VERSION);
+            console.log('Firebase apps:', firebase.apps.length);
+        } else {
+            updateStatus('❌ Firebase SDK failed to load');
+            console.error('Firebase SDK not available');
+        }
+        
+        // Test after a delay
+        setTimeout(() => {
+            console.log('🔄 Testing Firebase after delay...');
+            console.log('Firebase available:', typeof firebase !== 'undefined');
+            
+            if (typeof firebase !== 'undefined') {
+                updateStatus('✅ Firebase SDK loaded successfully (delayed check)!');
+            } else {
+                updateStatus('❌ Firebase SDK still not available');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
+
+
+
+

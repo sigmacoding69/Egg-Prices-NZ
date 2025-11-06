@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test - EggPrices NZ</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .test-button { margin: 10px; padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        .test-button:hover { background: #0056b3; }
+        .status { margin: 10px 0; padding: 10px; background: #f8f9fa; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Navigation Test - EggPrices NZ</h1>
+    
+    <div class="test-section">
+        <h2>Page Navigation</h2>
+        <button class="test-button" onclick="window.location.href='index.html'">Go to Dashboard</button>
+        <button class="test-button" onclick="window.location.href='prices.html'">Go to Prices</button>
+
+        <button class="test-button" onclick="window.location.href='about.html'">Go to About</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Authentication Test</h2>
+        <button class="test-button" onclick="testAuth()">Test Login/Signup</button>
+        <div id="authStatus" class="status">Click the button to test authentication</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Feature Tests</h2>
+        <button class="test-button" onclick="testPriceAlerts()">Test Price Alerts</button>
+        <button class="test-button" onclick="testShoppingList()">Test Shopping List</button>
+        <div id="featureStatus" class="status">Click buttons to test features</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Data Test</h2>
+        <button class="test-button" onclick="testData()">Test Egg Data</button>
+        <div id="dataStatus" class="status">Click to test if egg data loads</div>
+    </div>
+
+    <!-- Load all scripts -->
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="prices.js"></script>
+    <script src="map.js"></script>
+    
+    <script>
+        function testAuth() {
+            const status = document.getElementById('authStatus');
+            if (typeof showAuthModal === 'function') {
+                status.innerHTML = '✅ Authentication system loaded successfully!<br>Click "Sign Up" to test the modal.';
+                showAuthModal('signup');
+            } else {
+                status.innerHTML = '❌ Authentication system not loaded';
+            }
+        }
+        
+        function testPriceAlerts() {
+            const status = document.getElementById('featureStatus');
+            if (typeof openPriceAlerts === 'function') {
+                status.innerHTML = '✅ Price Alerts function available!<br>Testing the feature...';
+                openPriceAlerts();
+            } else {
+                status.innerHTML = '❌ Price Alerts function not found';
+            }
+        }
+        
+        function testShoppingList() {
+            const status = document.getElementById('featureStatus');
+            if (typeof openShoppingList === 'function') {
+                status.innerHTML = '✅ Shopping List function available!<br>Testing the feature...';
+                openShoppingList();
+            } else {
+                status.innerHTML = '❌ Shopping List function not found';
+            }
+        }
+        
+        function testData() {
+            const status = document.getElementById('dataStatus');
+            if (typeof groceryData !== 'undefined' && groceryData.length > 0) {
+                status.innerHTML = `✅ Egg data loaded successfully!<br>Found ${groceryData.length} products from ${new Set(groceryData.flatMap(item => item.prices.map(p => p.store))).size} stores.`;
+            } else {
+                status.innerHTML = '❌ Egg data not loaded';
+            }
+        }
+        
+        // Auto-test on page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                testData();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

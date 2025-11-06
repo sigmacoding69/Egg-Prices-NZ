@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firestore Test Page</title>
+</head>
+<body>
+    <h1>Firestore Integration Test</h1>
+    <div id="status">Testing...</div>
+    <button onclick="testFirestore()">Test Firestore</button>
+    <button onclick="testUserCreation()">Test User Creation</button>
+    <div id="results"></div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Configuration -->
+    <script src="firebase-config.js"></script>
+    <script src="firestore-utils.js"></script>
+    
+    <script>
+        function updateStatus(message) {
+            document.getElementById('status').innerHTML = message;
+            console.log(message);
+        }
+        
+        function addResult(message) {
+            const results = document.getElementById('results');
+            results.innerHTML += '<div>' + message + '</div>';
+        }
+        
+        async function testFirestore() {
+            updateStatus('Testing basic Firestore connection...');
+            
+            try {
+                // Test basic Firestore write
+                const db = firebase.firestore();
+                await db.collection('test').doc('manual-test').set({
+                    message: 'Hello from manual test!',
+                    timestamp: new Date(),
+                    testId: Math.random().toString(36).substr(2, 9)
+                });
+                
+                updateStatus('✅ Basic Firestore write successful!');
+                addResult('✅ Basic Firestore write successful!');
+                
+                // Test read
+                const doc = await db.collection('test').doc('manual-test').get();
+                if (doc.exists) {
+                    addResult('✅ Basic Firestore read successful: ' + JSON.stringify(doc.data()));
+                } else {
+                    addResult('❌ Document not found after write');
+                }
+                
+            } catch (error) {
+                updateStatus('❌ Firestore test failed: ' + error.message);
+                addResult('❌ Error: ' + error.message);
+                addResult('❌ Error code: ' + error.code);
+            }
+        }
+        
+        async function testUserCreation() {
+            updateStatus('Testing user creation...');
+            
+            if (!window.firestoreUtils) {
+                updateStatus('❌ FirestoreUtils not available');
+                addResult('❌ FirestoreUtils not available');
+                return;
+            }
+            
+            const testUser = {
+                id: 'test_user_' + Date.now(),
+                name: 'Test User',
+                email: 'test@example.com',
+                isPremium: false,
+                createdAt: new Date().toISOString()
+            };
+            
+            try {
+                const result = await window.firestoreUtils.saveUser(testUser);
+                if (result.success) {
+                    updateStatus('✅ User creation test successful!');
+                    addResult('✅ User creation test successful!');
+                } else {
+                    updateStatus('❌ User creation failed: ' + result.error);
+                    addResult('❌ User creation failed: ' + result.error);
+                }
+            } catch (error) {
+                updateStatus('❌ User creation test failed: ' + error.message);
+                addResult('❌ User creation test failed: ' + error.message);
+            }
+        }
+        
+        // Auto-run basic test on page load
+        window.addEventListener('load', function() {
+            updateStatus('Page loaded. Click "Test Firestore" to begin testing.');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

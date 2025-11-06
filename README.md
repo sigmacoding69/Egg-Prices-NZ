@@ -1,6 +1,6 @@
-# 🛒 GroceryCompare NZ
+# 🥚 EggPrices NZ
 
-A comprehensive grocery price comparison platform for New Zealand, helping Kiwis find the best deals across major supermarket chains.
+A comprehensive egg price comparison platform for New Zealand, helping Kiwis find the best deals on eggs across major supermarket chains.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node.js](https://img.shields.io/badge/node-%3E%3D16.0.0-brightgreen)
@@ -9,11 +9,11 @@ A comprehensive grocery price comparison platform for New Zealand, helping Kiwis
 ## 🌟 Features
 
 ### Core Features
-- **Real-time Price Comparison** across NZ supermarkets
-- **AI-Powered Shopping Assistant** with OpenAI integration
+- **Real-time Egg Price Comparison** across NZ supermarkets
+
 - **User Authentication** with JWT tokens
 - **Premium Subscriptions** via Stripe integration
-- **Price Alerts** and favorites (Premium feature)
+- **Egg Price Alerts** and favorites (Premium feature)
 - **Mobile-Responsive Design**
 
 ### Supported Stores
@@ -30,15 +30,15 @@ A comprehensive grocery price comparison platform for New Zealand, helping Kiwis
 ### Prerequisites
 - Node.js 16+ 
 - npm or yarn
-- OpenAI API key (optional, for real AI)
+
 - Stripe account (for payments)
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/sigmacoding69/Grocery-Pricing-NZ.git
-   cd Grocery-Pricing-NZ
+   git clone https://github.com/sigmacoding69/EggPrices-NZ.git
+   cd EggPrices-NZ
    ```
 
 2. **Install dependencies**
@@ -54,7 +54,7 @@ A comprehensive grocery price comparison platform for New Zealand, helping Kiwis
    Edit `.env` with your configuration:
    ```env
    PORT=3001
-   OPENAI_API_KEY=your-openai-api-key-here
+   
    STRIPE_SECRET_KEY=your-stripe-secret-key
    STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
    JWT_SECRET=your-secure-jwt-secret
@@ -73,7 +73,7 @@ A comprehensive grocery price comparison platform for New Zealand, helping Kiwis
 ### Backend (Node.js/Express)
 - **Authentication**: JWT-based user management
 - **Payments**: Stripe integration for premium subscriptions
-- **AI**: OpenAI GPT integration with fallback responses
+
 - **Security**: Helmet, CORS, rate limiting
 - **Data**: JSON file storage (demo) - ready for database integration
 
@@ -91,33 +91,19 @@ A comprehensive grocery price comparison platform for New Zealand, helping Kiwis
 - `GET /api/auth/verify` - Token verification
 
 #### Prices
-- `GET /api/prices` - Get all grocery prices
+- `GET /api/prices` - Get all egg prices
 - `GET /api/prices/:id` - Get specific item
 - `POST /api/prices/alerts` - Create price alert (Premium)
 - `POST /api/prices/submit` - Submit crowdsourced price
 
-#### AI Assistant
-- `POST /api/ai/chat` - Chat with AI assistant
+
 - `GET /api/ai/conversations/:id` - Get conversation history
 
 #### Stripe/Payments
 - `POST /api/stripe/create-checkout-session` - Create payment session
 - `POST /api/stripe/webhook` - Handle Stripe webhooks
 
-## 🤖 AI Integration
 
-The platform features a sophisticated AI assistant powered by OpenAI GPT that provides:
-
-- **Personalized Shopping Advice**
-- **Budget Optimization Tips**
-- **Store Recommendations**
-- **Price Trend Analysis**
-- **Location-based Suggestions**
-
-### AI Configuration
-1. Get an OpenAI API key from [platform.openai.com](https://platform.openai.com)
-2. Add it to your `.env` file
-3. The system includes intelligent fallbacks if OpenAI is unavailable
 
 ## 💳 Payment Integration
 
@@ -129,10 +115,10 @@ Premium features are powered by Stripe:
 - **Usage Tracking**
 
 ### Premium Features
-- Unlimited AI assistant access
-- Real-time price alerts
-- Advanced shopping lists
-- Historical price tracking
+
+- Real-time egg price alerts
+- Advanced egg tracking lists
+- Historical egg price tracking
 - Priority support
 
 ## 🔧 Development
@@ -141,8 +127,8 @@ Premium features are powered by Stripe:
 ```
 ├── routes/           # API route handlers
 │   ├── auth.js      # Authentication routes
-│   ├── prices.js    # Price comparison routes
-│   ├── ai.js        # AI assistant routes
+│   ├── prices.js    # Egg price comparison routes
+
 │   └── stripe.js    # Payment routes
 ├── middleware/      # Express middleware
 ├── models/          # Data models
@@ -188,24 +174,24 @@ npm run coverage   # Coverage report
 - Complete backend API
 - User authentication system
 - Stripe payment integration
-- AI assistant with OpenAI
-- Price comparison engine
+
+- Egg price comparison engine
 - Responsive frontend
-- Real-time price updates (simulated)
+- Real-time egg price updates (simulated)
 
 ### 🚧 In Development
-- Real grocery store API integrations
+- Real supermarket egg price API integrations
 - Database migration
-- Advanced analytics
+- Advanced egg price analytics
 - Mobile app
 - API rate limiting improvements
 
 ### 🔮 Planned Features
-- Web scraping for real-time prices
-- Machine learning price predictions
-- Barcode scanning
-- Shopping list collaboration
-- Grocery delivery integration
+- Web scraping for real-time egg prices
+- Machine learning egg price predictions
+- Barcode scanning for eggs
+- Egg tracking collaboration
+- Egg delivery integration
 
 ## 🤝 Contributing
 
@@ -225,19 +211,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- OpenAI for GPT integration
+
 - Stripe for payment processing
 - New Zealand supermarket chains for inspiration
 - The open-source community
 
 ## 📞 Support
 
-- 📧 Email: support@grocerycompare.nz
-- 🐛 Issues: [GitHub Issues](https://github.com/sigmacoding69/Grocery-Pricing-NZ/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/sigmacoding69/Grocery-Pricing-NZ/discussions)
+- 📧 Email: support@eggprices.nz
+- 🐛 Issues: [GitHub Issues](https://github.com/sigmacoding69/EggPrices-NZ/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/sigmacoding69/EggPrices-NZ/discussions)
 
 ---
 
 **Made with ❤️ for the NZ community**
 
-*Helping Kiwis save money on groceries, one comparison at a time!*
+*Helping Kiwis save money on eggs, one comparison at a time!*

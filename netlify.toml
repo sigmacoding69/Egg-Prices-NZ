@@ -1,0 +1,34 @@
+[build]
+  # No build step needed for static site
+  command = "echo Skipping build"
+  
+  # Publish the project root where your HTML/CSS/JS live
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirect API calls to external backend (when you deploy it)
+# Update this URL when you deploy your backend
+[[redirects]]
+  from = "/api/*"
+  to = "https://your-backend-url.herokuapp.com/api/:splat"
+  status = 200
+  force = true
+
+# Handle SPA routing (for single page app behavior)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+

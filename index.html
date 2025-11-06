@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GroceryCompare NZ - Dashboard</title>
+    <title>EggPrices NZ - Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Frontend-only demo - no external dependencies needed -->
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-shopping-cart"></i>
-                <h1>GroceryCompare NZ</h1>
+            <div class="logo" onclick="window.location.href='index.html'">
+                <i class="fas fa-egg"></i>
+                <h1>EggPrices NZ</h1>
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link active">Dashboard</a>
-                <a href="prices.html" class="nav-link">Compare Prices</a>
-                <a href="ai-assistant.html" class="nav-link">AI Assistant</a>
+                <a href="prices.html" class="nav-link">Compare Egg Prices</a>
+
                 <a href="about.html" class="nav-link">About</a>
             </nav>
             <div class="user-controls">
@@ -41,8 +41,8 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>Your Grocery Price Dashboard</h2>
-                    <p>Real-time price tracking across New Zealand supermarkets. Save money with intelligent comparisons and AI-powered recommendations.</p>
+                    <h2>Your Egg Price Dashboard</h2>
+                    <p>Real-time egg price tracking across New Zealand supermarkets. Find the best deals on fresh eggs with intelligent comparisons and AI-powered recommendations.</p>
                     <div class="dashboard-stats">
                         <div class="stat-card">
                             <i class="fas fa-chart-line"></i>
@@ -81,15 +81,11 @@
                 <div class="actions-grid">
                     <a href="prices.html" class="action-card">
                         <i class="fas fa-search"></i>
-                        <h3>Compare Prices</h3>
-                        <p>Find the best deals across all stores</p>
+                        <h3>Compare Egg Prices</h3>
+                        <p>Find the best egg deals across all stores</p>
                     </a>
-                    <a href="ai-assistant.html" class="action-card premium">
-                        <i class="fas fa-robot"></i>
-                        <h3>AI Assistant</h3>
-                        <p>Get personalized shopping recommendations</p>
-                        <span class="premium-badge">Premium</span>
-                    </a>
+
+
                     <a href="#" onclick="openPriceAlerts()" class="action-card">
                         <i class="fas fa-bell"></i>
                         <h3>Price Alerts</h3>
@@ -97,8 +93,14 @@
                     </a>
                     <a href="#" onclick="openShoppingList()" class="action-card">
                         <i class="fas fa-list"></i>
-                        <h3>Shopping List</h3>
-                        <p>Track your grocery list with prices</p>
+                        <h3>Egg Tracker</h3>
+                        <p>Track your egg purchases with prices</p>
+                    </a>
+                    
+                    <a href="#" onclick="testStripePayment()" class="action-card" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Stripe Payment</h3>
+                        <p>Real Stripe integration</p>
                     </a>
                 </div>
             </div>
@@ -120,7 +122,10 @@
         <div class="modal-content">
             <span class="close" onclick="closeAuthModal()">&times;</span>
             <div id="loginForm" class="auth-form">
-                <h2>Login to GroceryCompare NZ</h2>
+                <h2>Login to EggPrices NZ</h2>
+                
+
+                
                 <form onsubmit="handleLogin(event)">
                     <input type="email" id="loginEmail" placeholder="Email" required>
                     <input type="password" id="loginPassword" placeholder="Password" required>
@@ -129,7 +134,10 @@
                 <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a></p>
             </div>
             <div id="signupForm" class="auth-form hidden">
-                <h2>Sign Up for GroceryCompare NZ</h2>
+                <h2>Sign Up for EggPrices NZ</h2>
+                
+
+                
                 <form onsubmit="handleSignup(event)">
                     <input type="text" id="signupName" placeholder="Full Name" required>
                     <input type="email" id="signupEmail" placeholder="Email" required>
@@ -150,15 +158,18 @@
                 <div class="pricing-card">
                     <h3>Premium Features</h3>
                     <ul>
-                        <li><i class="fas fa-check"></i> Unlimited AI Assistant Access</li>
+
                         <li><i class="fas fa-check"></i> Real-time Price Alerts</li>
                         <li><i class="fas fa-check"></i> Advanced Shopping Lists</li>
                         <li><i class="fas fa-check"></i> Historical Price Tracking</li>
                         <li><i class="fas fa-check"></i> Premium Support</li>
                     </ul>
                     <div class="price">$9.99/month</div>
+                    <div class="payment-info">
+                        <small><i class="fas fa-shield-alt"></i> Secure payment powered by Stripe</small>
+                    </div>
                     <button id="subscribeBtn" class="premium-btn" onclick="handleSubscription()">
-                        Subscribe Now
+                        <i class="fas fa-credit-card"></i> Subscribe with Stripe
                     </button>
                 </div>
             </div>
@@ -167,10 +178,23 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 GroceryCompare NZ. All rights reserved. | Helping Kiwis save money on groceries!</p>
+            <p>&copy; 2024 EggPrices NZ. All rights reserved. | Helping Kiwis save money on eggs!</p>
         </div>
     </footer>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- App Configuration -->
+    <script src="firebase-config.js"></script>
+    <script src="firestore-utils.js"></script>
+    <script src="firestore-test.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="stripe-config.js"></script>
+    <script src="stripe-payment.js"></script>
+    <script src="ai-assistant-config.js"></script>
+    <script src="ai-assistant.js"></script>
     <script src="auth.js"></script>
     <script src="dashboard.js"></script>
     <script src="crawler.js"></script>
