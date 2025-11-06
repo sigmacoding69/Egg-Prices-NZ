@@ -898,6 +898,11 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Ensure price text is white on the pink gradient card */
+.pricing-card .price {
+    color: #fff;
+}
+
 .premium-btn {
     background: white;
     color: #f093fb;
@@ -923,7 +928,7 @@ body {
 
 .payment-info small {
     font-size: 12px;
-    color: #28a745;
+    color: #fff;
 }
 
 .payment-info i {
