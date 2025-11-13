@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EggPrices NZ - Price Comparison</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Frontend-only demo - no external dependencies needed -->
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo" onclick="window.location.href='index.html'">
+            <div class="logo" onclick="window.location.href='/'">
                 <i class="fas fa-egg"></i>
                 <h1>EggPrices NZ</h1>
             </div>
             <nav class="nav">
-                <a href="index.html" class="nav-link">Dashboard</a>
-                <a href="prices.html" class="nav-link active">Compare Egg Prices</a>
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/prices" class="nav-link active">Compare Egg Prices</a>
 
-                <a href="about.html" class="nav-link">About</a>
+                <a href="/about" class="nav-link">About</a>
             </nav>
             <div class="user-controls">
                 <div id="userSection" class="user-section hidden">
@@ -191,13 +191,13 @@
     </footer>
 
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="stripe-config.js"></script>
-    <script src="stripe-payment.js"></script>
-    <script src="ai-assistant-config.js"></script>
-    <script src="ai-assistant.js"></script>
-    <script src="auth.js"></script>
-    <script src="script.js"></script>
-    <script src="prices.js"></script>
+    <script src="/stripe-config.js"></script>
+    <script src="/stripe-payment.js"></script>
+    <script src="/ai-assistant-config.js"></script>
+    <script src="/ai-assistant.js"></script>
+    <script src="/auth.js"></script>
+    <script src="/script.js"></script>
+    <script src="/prices.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

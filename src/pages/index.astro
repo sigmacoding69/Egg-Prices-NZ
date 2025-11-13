@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EggPrices NZ - Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Frontend-only demo - no external dependencies needed -->
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo" onclick="window.location.href='index.html'">
+            <div class="logo" onclick="window.location.href='/'">
                 <i class="fas fa-egg"></i>
                 <h1>EggPrices NZ</h1>
             </div>
             <nav class="nav">
-                <a href="index.html" class="nav-link active">Dashboard</a>
-                <a href="prices.html" class="nav-link">Compare Egg Prices</a>
+                <a href="/" class="nav-link active">Dashboard</a>
+                <a href="/prices" class="nav-link">Compare Egg Prices</a>
 
-                <a href="about.html" class="nav-link">About</a>
+                <a href="/about" class="nav-link">About</a>
             </nav>
             <div class="user-controls">
                 <div id="userSection" class="user-section hidden">
@@ -79,7 +79,7 @@
             <div class="container">
                 <h2>Quick Actions</h2>
                 <div class="actions-grid">
-                    <a href="prices.html" class="action-card">
+                    <a href="/prices" class="action-card">
                         <i class="fas fa-search"></i>
                         <h3>Compare Egg Prices</h3>
                         <p>Find the best egg deals across all stores</p>
@@ -187,16 +187,16 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
     
     <!-- App Configuration -->
-    <script src="firebase-config.js"></script>
-    <script src="firestore-utils.js"></script>
-    <script src="firestore-test.js"></script>
+    <script src="/firebase-config.js"></script>
+    <script src="/firestore-utils.js"></script>
+    <script src="/firestore-test.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="stripe-config.js"></script>
-    <script src="stripe-payment.js"></script>
-    <script src="ai-assistant-config.js"></script>
-    <script src="ai-assistant.js"></script>
-    <script src="auth.js"></script>
-    <script src="dashboard.js"></script>
+    <script src="/stripe-config.js"></script>
+    <script src="/stripe-payment.js"></script>
+    <script src="/ai-assistant-config.js"></script>
+    <script src="/ai-assistant.js"></script>
+    <script src="/auth.js"></script>
+    <script src="/dashboard.js"></script>
 
 </body>
 </html>

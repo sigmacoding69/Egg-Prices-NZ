@@ -1,0 +1,15 @@
+{
+  "name": "eggprices-astro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^4.10.0"
+  }
+}
+
+
