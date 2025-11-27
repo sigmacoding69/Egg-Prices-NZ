@@ -9,7 +9,7 @@ const AI_ASSISTANT_CONFIG = {
     model: 'gpt-4o-mini',
     
     // API endpoint
-    apiUrl: 'https://api.openai.com/v1/chat/completions',
+    apiUrl: '/.netlify/functions/openai-chat',
     
     // System prompt for egg-specific assistance
     systemPrompt: `You are an AI assistant specialized in providing information about eggs, egg prices, nutrition, cooking, and egg-related advice. You help users with:

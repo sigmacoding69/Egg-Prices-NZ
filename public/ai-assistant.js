@@ -266,8 +266,7 @@ class AIEggAssistant {
         const response = await fetch(config.apiUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${config.apiKey}`
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 model: config.model,
