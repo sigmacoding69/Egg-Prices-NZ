@@ -62,6 +62,7 @@ async function testFirestoreConnection() {
             stack: error.stack
         });
         
+        
         if (error.code === 'permission-denied') {
             console.error('🔒 Permission denied - check Firestore security rules');
             console.log('Current rules should allow read/write for testing:');
