@@ -10,6 +10,7 @@ const firebaseConfig = {
     appId: "1:725627956886:web:a00a06c97b0dbbc4315cb7"
 };
 
+
 // Initialize Firebase
 console.log('🔄 Checking Firebase availability...');
 console.log('Firebase object:', typeof firebase);
